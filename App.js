@@ -5,22 +5,22 @@ import './App.css';
 
 class App extends React.Component{
 
-  constructor(props){
+  constructor(props){ // props is like function parameter
     super(props);
-    this.state = {
-      newItem: "",
-      list:[]
+    this.state = { // here state is object
+      newItem: "", // newItem is initially empty
+      list:[] // array of list items
     }
   }
 
    addItem(todoValue){
-    if (todoValue !== ""){
-        const newItem ={
-          id: Date.now(),
-          value: todoValue,
-          isDone:false
+    if (todoValue !== ""){ // if todoValue isnot empty
+        const newItem ={ //  newitem is object 
+          id: Date.now(),  // object property
+          value: todoValue, // object property
+          isDone:false  // object property
         };
-        const list = [...this.state.list];
+        const list = [...this.state.list]; // triple dot means to append all the values to variable list
         list.push(newItem);
 
         this.setState({
